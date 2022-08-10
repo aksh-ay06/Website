@@ -1,0 +1,324 @@
+html {
+  font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem*/
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  /* background-color: #2020a0; */
+  /* max-width: 100%; */
+  overflow-x: hidden;
+}
+#root {
+  height: 100%;
+  /* background-color: red; */
+}
+
+/* Layout*/
+.grid-container {
+  display: grid; /*grid is new layout system in css which is very responsive and flexible*/
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-columns: 1fr; /*1 column is there*/
+  grid-template-rows: 5rem 1fr 5rem; /*5rem for header section,  1fragment for main section, 5rem for footer section*/
+  height: 100%;
+}
+
+header {
+  padding-right: 2rem;
+  /* margin-left: 1rem; */
+  /* margin-right: 4rem; */
+  grid-area: header; /*we are connecting the grid-template-areas to header*/
+  background-color: rgb(245, 86, 118);
+}
+
+main {
+  grid-area: main;
+  /* padding: 1rem; */
+}
+footer {
+  grid-area: footer;
+  background-color: black;
+  color: whitesmoke;
+}
+
+/* Common */
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+h2 {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+a {
+  text-decoration: none; /*to remove the underline*/
+}
+a:hover {
+  color: rgb(31, 28, 22);
+}
+ul {
+  padding: 0.5rem;
+  margin: 0;
+  list-style-type: none;
+  border: 1px solid rgb(226, 223, 223);
+}
+li {
+  margin-top: 1rem;
+}
+button {
+  padding: 1rem;
+  border: 0.1rem #a4a4a4 solid;
+  color: white;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: white;
+}
+button:hover {
+  border: 0.2rem;
+}
+button.primary {
+  background-color: black;
+}
+button.block {
+  width: 100%;
+}
+button.small {
+  font-size: 1.2rem;
+  color: black;
+}
+select {
+  /* border: 1px solid rgb(202, 27, 27); */
+  font-size: 1.6rem;
+  width: 100px;
+}
+/*Header*/
+header a {
+  /* padding: 0.1rem; */
+  color: whitesmoke;
+  margin: 1rem;
+}
+
+a.brand {
+  color: white;
+  font-size: 2.7rem;
+  font-weight: bold;
+}
+a.brand:hover {
+  color: rgb(31, 28, 22);
+}
+.badge {
+  /* border: 1px solid black; */
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  padding: 0.2rem 0.7rem;
+  margin-left: 0.2rem;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*footer*/
+.row.center {
+  justify-content: center;
+  width: 100vw;
+  /* height: 100%; */
+}
+.row.top {
+  align-items: flex-start;
+}
+
+.col-1 {
+  flex: 1 1 25rem;
+}
+.col-2 {
+  flex: 2 1 25rem;
+}
+.min-30 {
+  min-width: 30rem;
+  /* border: 1px solid black; */
+}
+
+.small-img {
+  /* display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img-small {
+  margin-top: 3rem;
+  height: 80%;
+  width: 80%;
+}
+/*Image*/
+img {
+  /* border-radius: 0.5rem; */
+}
+img.medium {
+  max-width: 29rem;
+  width: 100%;
+}
+img.small {
+  max-width: 5rem;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+.img-large {
+  width: 100%;
+}
+
+/*Card*/
+
+.card {
+  border: 0.1rem;
+  /* background-color: #f8f8f8; */
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+.card-body {
+  padding: 1rem;
+}
+
+.card-body > * {
+  margin-bottom: 0.5rem;
+}
+.price {
+  font-size: 2rem;
+}
+
+/*Rating*/
+.rating span {
+  margin: 0.1rem;
+}
+.top-img {
+  border-radius: 0px;
+  width: 100%;
+}
+
+/*Alert */
+.loading {
+  display: block !important; /*to prevent moving arund to loading */
+}
+.success {
+  color: #20a020;
+}
+.danger {
+  color: #a02020;
+}
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+}
+.alert-info {
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+.alert-danger {
+  color: #a02020;
+  background-color: #ffe0e0e0;
+}
+.alert-success {
+  color: #049d04;
+  background-color: #eeffe0;
+}
+
+/**Cartscreen**/
+.fa-trash {
+  color: black;
+  border: 1px solid white;
+}
+/* Form */
+.form {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.form label {
+  margin: 1rem 0;
+  /* display: block; */
+}
+/* Dropdown */
+.dropdown {
+  display: inline-block;
+  position: relative;
+  padding: 0.5rem;
+}
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 15rem;
+  padding: 0.5rem;
+  z-index: 1;
+  background-color: rgb(245, 86, 118);
+  margin: 0;
+  margin-top: 0.3rem;
+  /* border-radius: 0.5rem; */
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Checkout Steps */
+.checkout-steps > div {
+  border-top: 0.3rem #c0c0c0 solid;
+  margin-top: 1rem;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+.checkout-steps > div.active {
+  border-top-color: rgb(245, 86, 118);
+  color: rgb(245, 86, 118);
+}
+
+/*Shipping address*/
+input {
+  font-size: 1.5rem;
+}
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f4f4f4;
+}
+.table td,
+.table th {
+  text-align: left;
+  border: 0.1rem solid #e4e4e4;
+  padding: 0.5rem;
+}
+.table button {
+  margin: 0 0.2rem;
+}
